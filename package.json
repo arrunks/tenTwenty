@@ -6,17 +6,22 @@
   "scripts": {
     "watch:css": "tailwindcss -i ./styles.css -o ./dist/output.css --watch",
     "build:css": "tailwindcss -i ./styles.css -o ./dist/output.css",
-    "serve": "live-server --port=3000 --no-browser",
-    "dev": "concurrently \"npm run watch:css\" \"npm run serve\"",
-    "build": "rm -rf dist && mkdir -p dist && npm run build:css && cp -r public dist/ && cp index.html dist/ && ls -la dist"
+    "serve": "live-server dist --port=3000 --no-browser",
+    "clean": "rimraf dist",
+    "copy": "copyfiles -u 2 \"public/images/**/*\" dist && copyfiles index.html dist",
+    "mkdir": "mkdirp dist",
+    "dev": "npm run mkdir && npm run copy && concurrently \"npm run watch:css\" \"npm run serve\"",
+    "build": "npm run clean && npm run mkdir && npm run build:css && npm run copy"
   },
-  
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^8.2.2",
+    "copyfiles": "^2.4.1",
     "live-server": "^1.2.2",
+    "mkdirp": "^3.0.1",
+    "rimraf": "^5.0.5",
     "tailwindcss": "^3.4.17"
   }
 }
