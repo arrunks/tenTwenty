@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "watch:css": "tailwindcss -i ./styles.css -o ./dist/output.css --watch",
-    "serve": "live-server --port=3000 --no-browser",
-    "dev": "concurrently \"npm run watch:css\" \"npm run serve\""
-  },
+    "scripts": {
+      "watch:css": "tailwindcss -i ./styles.css -o ./dist/output.css --watch",
+      "build:css": "tailwindcss -i ./styles.css -o ./dist/output.css",
+      "serve": "live-server --port=3000 --no-browser",
+      "dev": "concurrently \"npm run watch:css\" \"npm run serve\"",
+      "build": "npm run build:css"
+    },
   "keywords": [],
   "author": "",
   "license": "ISC",
