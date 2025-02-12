@@ -1,6 +1,6 @@
 {
-    "buildCommand": "npm run build",
+    "buildCommand": "mkdir -p dist && npm run build",
     "outputDirectory": "dist",
-    "public": true
+    "public": true,
+    "installCommand": "npm install"
   }
-  
