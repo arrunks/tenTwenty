@@ -1,0 +1,366 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Work Sans', system-ui, sans-serif;
+  }
+  
+  body {
+    @apply antialiased font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans;
+  }
+
+  p, span, a, button {
+    @apply font-sans;
+  }
+}
+
+.hero-slider .swiper-slide {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.hero-slider .swiper-slide-active {
+  opacity: 1;
+}
+
+.slide-content {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.swiper-slide-active .slide-content {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.5s;
+}
+
+.progress-bar {
+  transition: width 5s linear;
+}
+
+.product-slider {
+  overflow: visible !important;
+}
+
+.product-slider .swiper-slide {
+  transition: transform 0.3s ease;
+  padding: 20px;
+}
+
+.product-slider .swiper-slide-active {
+  z-index: 2;
+}
+
+.product-slider .swiper-slide-prev,
+.product-slider .swiper-slide-next {
+  opacity: 0.6;
+  transform: scale(0.9);
+}
+
+.quality-title, .quality-text {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.quality-title.visible, .quality-text.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Update the mobile menu styles */
+#mobile-menu {
+    position: fixed;
+    inset: 0;
+    background: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    z-index: 100;
+}
+
+#mobile-menu.translate-y-0 {
+    transform: translateY(0);
+}
+
+#mobile-menu .menu-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+#mobile-menu .menu-items a {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+    font-weight: 400;
+}
+
+#mobile-menu .menu-items a:hover {
+    opacity: 0.8;
+}
+
+#close-menu-button {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    color: white;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .hero-slider .slide-content {
+    padding-top: 6rem;
+  }
+  .product-slider .swiper-wrapper {
+    padding: 20px 0;
+  }
+  
+  .product-slider .swiper-slide {
+    width: 250px;
+  }
+}
+
+.product-slider .swiper-wrapper {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.product-slider .swiper-slide img {
+  transition: transform 0.3s ease;
+}
+
+.product-slider .swiper-slide:hover img {
+  transform: scale(1.05);
+}
+
+/* Update the thumbnail styles */
+.thumbnail-container {
+    position: relative;
+    width: 96px;
+    height: 96px;
+    cursor: pointer;
+}
+
+.next-slide-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+  z-index: 2; /* Add this to keep image on top */
+
+}
+
+.thumbnail-progress-1{
+  position: absolute;
+  top: 0;
+  left: 2px;
+  pointer-events: none;
+  border-top: 4px solid white;
+  border-right: 4px solid white;
+  width:0;
+  height:0;
+
+}
+
+.thumbnail-progress-2{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  pointer-events: none;
+  border-bottom: 4px solid white;
+  border-left: 4px solid white;
+  width:0;
+  height:0;
+}
+
+
+@keyframes progress-top {
+  0% {
+    width:0;
+    height:0;
+  }
+  25% {
+    width:100%;height:0;
+  }
+
+  50%{
+    width:100%;height:100%;
+  }
+  100% {
+    width:100%;height:100%
+  }
+}
+
+@keyframes progress-bottom {
+  0% {
+    width:0;
+    height:0;
+    opacity: 0;
+  }
+  50%{ 
+    width:0;height:0; opacity: 0;
+  }
+  50.1%{
+    width:0;height:0; opacity: 0;
+  }
+  75%{
+    width:100%;height:0; opacity: 1;
+  }
+  100%{
+    width:100%;height:100%; opacity: 1;
+  }
+
+
+}
+
+.next-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: 500;
+    z-index: 3;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    pointer-events: none;
+}
+
+/* Update navigation styles */
+nav a {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+nav button {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/* Mobile menu styles */
+#mobile-menu {
+    z-index: 100;
+}
+
+#mobile-menu a {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+#mobile-menu.translate-y-0 {
+    transform: translateY(0);
+}
+
+/* Update button hover states */
+.hover\:opacity-70:hover {
+    opacity: 0.7;
+}
+
+/* Ensure proper z-indexing */
+.z-50 {
+    z-index: 50;
+}
+
+/* Update specific text styles */
+.current-slide,
+.next-label,
+.client-name,
+.client-location {
+  font-family: 'Work Sans', system-ui, sans-serif;
+}
+
+/* Update text styles */
+.slide-content p {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    opacity: 0.8;
+}
+
+.slide-content h1 {
+    font-size: 64px;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+/* Quality section updates */
+.quality-title {
+    font-size: 48px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+}
+
+.quality-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666666;
+    max-width: 580px;
+    margin: 0 auto;
+}
+
+/* Client info updates */
+.client-name {
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+}
+
+.client-location {
+    font-size: 16px;
+    color: #666666;
+}
+
+/* Navigation updates */
+nav a {
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+}
+
+.contact-us-btn {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 12px 24px;
+    border-width: 1.5px;
+}
+
+/* Slider controls */
+.current-slide, 
+.total-slides {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+.next-label {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+/* Desktop navigation styles */
+@media (min-width: 768px) {
+  
+  nav > div:first-child > div {
+    max-width: 1400px;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+  }
+} 

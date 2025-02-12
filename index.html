@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TwentyFarms - Sustainable Farming & Quality Produce</title>
+    <meta
+      name="description"
+      content="TwentyFarms delivers fresh, sustainable produce from our farms directly to your hands. Experience quality organic farming and natural growth."
+    />
+    <meta
+      name="keywords"
+      content="organic farming, sustainable agriculture, fresh produce, quality products"
+    />
+
+    <!-- Open Graph tags -->
+    <meta
+      property="og:title"
+      content="TwentyFarms - Sustainable Farming & Quality Produce"
+    />
+    <meta
+      property="og:description"
+      content="Fresh produce from our farms directly to your hands. Experience quality organic farming."
+    />
+    <meta property="og:image" content="/public/images/hero-1.jpg" />
+    <meta property="og:type" content="website" />
+
+    <!-- Existing stylesheets -->
+    <link href="./dist/output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="overflow-x-hidden">
+    <!-- Navigation -->
+    <nav
+      class="absolute top-0 left-0 right-0 z-50"
+      role="navigation"
+      aria-label="Main navigation"
+    >
+      <!-- Desktop Navigation -->
+      <div class="hidden md:block m-[20px]">
+        <div
+          class="mx-auto bg-white px-8 py-6 flex justify-between items-center"
+        >
+          <div class="flex space-x-14" role="menubar">
+            <a
+              href="#about"
+              class="text-black hover:opacity-70 transition-opacity"
+              role="menuitem"
+              >About</a
+            >
+            <a href="#" class="text-black hover:opacity-70 transition-opacity"
+              >News</a
+            >
+            <a href="#" class="text-black hover:opacity-70 transition-opacity"
+              >Services</a
+            >
+            <a href="#" class="text-black hover:opacity-70 transition-opacity"
+              >Our Team</a
+            >
+            <a href="#" class="text-black hover:opacity-70 transition-opacity"
+              >Make Enquiry</a
+            >
+          </div>
+          <button
+            class="contact-us-btn border border-black text-black hover:bg-black hover:text-white transition-colors flex items-center gap-3"
+            aria-label="Contact us"
+          >
+            Contact us
+            <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none">
+              <path
+                d="M1 8H15M15 8L8 1M15 8L8 15"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <div
+        class="md:hidden bg-white px-6 py-4 flex justify-between items-center"
+      >
+        <button
+          class="text-black p-2"
+          id="mobile-menu-button"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M3 12H21M3 6H21M3 18H21"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+        <button
+          class="px-4 py-2 border border-black text-black hover:bg-black hover:text-white transition-colors flex items-center gap-2"
+        >
+          Contact us
+          <svg
+            class="w-4 h-4"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M1 8H15M15 8L8 1M15 8L8 15"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Menu Panel -->
+      <div
+        class="md:hidden fixed inset-0 bg-black transform -translate-y-full transition-transform duration-300"
+        id="mobile-menu"
+      >
+        <button
+          id="close-menu-button"
+          class="absolute top-6 right-6 text-white p-2"
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M18 6L6 18M6 6L18 18"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+        <div
+          class="h-full flex flex-col justify-center items-center space-y-8 text-center"
+        >
+          <a
+            href="#"
+            class="text-white text-xl hover:opacity-70 transition-opacity w-full"
+            >About</a
+          >
+          <a
+            href="#"
+            class="text-white text-xl hover:opacity-70 transition-opacity w-full"
+            >News</a
+          >
+          <a
+            href="#"
+            class="text-white text-xl hover:opacity-70 transition-opacity w-full"
+            >Services</a
+          >
+          <a
+            href="#"
+            class="text-white text-xl hover:opacity-70 transition-opacity w-full"
+            >Our Team</a
+          >
+          <a
+            href="#"
+            class="text-white text-xl hover:opacity-70 transition-opacity w-full"
+            >Make Enquiry</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div
+      class="hero-slider swiper h-screen"
+      role="region"
+      aria-label="Hero slideshow"
+    >
+      <div class="swiper-wrapper">
+        <!-- Slide 1 -->
+        <div class="swiper-slide relative" role="group" aria-label="Slide 1">
+          <img
+            src="public/images/hero-1.jpg"
+            alt="Aerial view of TwentyFarms agricultural fields"
+            loading="eager"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-black/30"></div>
+          <div class="absolute inset-0 flex items-center px-8">
+            <div class="max-w-[1440px] mx-auto w-full slide-content">
+              <div class="md:max-w-[580px]">
+                <p class="text-white mb-6">Welcome to TwentyFarms</p>
+                <h1 class="text-white mb-0">
+                  From Our Farms<br />To Your Hands
+                </h1>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="swiper-slide relative">
+          <img
+            src="public/images/hero-2.jpg"
+            alt="Farm"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-black/30"></div>
+          <div class="absolute inset-0 flex items-center px-8">
+            <div class="max-w-[1440px] mx-auto w-full slide-content">
+              <div class="md:max-w-[580px]">
+                <p class="text-white mb-6">Sustainable Farming</p>
+                <h1 class="text-white mb-0">
+                  Growing For<br />Tomorrow<br />Sustaining<br />Today
+                </h1>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="swiper-slide relative">
+          <img
+            src="public/images/hero-3.jpg"
+            alt="Farm"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-black/30"></div>
+          <div class="absolute inset-0 flex items-center px-8">
+            <div class="max-w-[1440px] mx-auto w-full slide-content">
+              <div class="md:max-w-[580px]">
+                <p class="text-white mb-6">Quality Produce</p>
+                <h1 class="text-white mb-0">
+                  Fresh From<br />Nature<br />Direct To<br />You
+                </h1>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="swiper-slide relative">
+          <img
+            src="public/images/hero-4.jpg"
+            alt="Farm"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-black/30"></div>
+          <div class="absolute inset-0 flex items-center px-8">
+            <div class="max-w-[1440px] mx-auto w-full slide-content">
+              <div class="md:max-w-[580px]">
+                <p class="text-white mb-6">Organic Farming</p>
+                <h1 class="text-white mb-0">
+                  Natural<br />Growth<br />Better<br />Health
+                </h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Thumbnail and Progress -->
+      <div class="absolute bottom-8 left-6 z-10 flex items-center space-x-8">
+        <div
+          class="thumbnail-container"
+          id="next-slide-button"
+          role="button"
+          aria-label="Next slide"
+          tabindex="0"
+        >
+          <img src="" alt="Preview of next slide" class="next-slide-preview" />
+          <div class="thumbnail-progress-1" aria-hidden="true"></div>
+          <div class="thumbnail-progress-2" aria-hidden="true"></div>
+          <span class="next-label">Next</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <span class="text-white text-xl current-slide">01</span>
+          <div class="w-12 h-0.5 bg-white"></div>
+          <span class="text-white text-xl">04</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quality Products Section -->
+    <section class="py-24" id="quality-section" aria-labelledby="quality-title">
+      <div class="max-w-4xl mx-auto text-center px-6">
+        <h2 class="quality-title" id="quality-title">Quality Products</h2>
+        <p class="quality-text text-gray-600">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </div>
+
+      <!-- Product Slider -->
+      <div class="product-slider swiper mt-16 overflow-visible px-6">
+        <div class="swiper-wrapper">
+          <!-- Product 1 -->
+          <div class="swiper-slide">
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+              <img
+                src="public/images/product-1.png"
+                alt="Detailed description of product 1"
+                class="w-full h-[500px] object-cover object-center"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <!-- Product 2 -->
+          <div class="swiper-slide">
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+              <img
+                src="public/images/product-2.png"
+                alt="Product"
+                class="w-full h-[500px] object-cover object-center"
+              />
+            </div>
+          </div>
+          <!-- Product 3 -->
+          <div class="swiper-slide">
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+              <img
+                src="public/images/product-3.png"
+                alt="Product"
+                class="w-full h-[500px] object-cover object-center"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Client Info -->
+      <div class="text-center mt-20">
+        <h3 class="text-2xl font-bold client-name">Client 1</h3>
+        <p class="text-gray-600 client-location">Dubai, United Arab Emirates</p>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      // Hero Slider
+      const heroSlider = new Swiper('.hero-slider', {
+        loop: true,
+        effect: 'fade',
+        fadeEffect: {
+          crossFade: true,
+        },
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        on: {
+          init: function (swiper) {
+            updateNextSlidePreview(swiper);
+            startProgress();
+          },
+          slideChange: function (swiper) {
+            updateNextSlidePreview(swiper);
+            updateSlideNumber(swiper);
+            startProgress();
+          },
+        },
+      });
+
+      function updateNextSlidePreview(swiper) {
+        const nextSlideIndex = (swiper.realIndex + 1) % swiper.slides.length;
+        const nextSlide = swiper.slides[nextSlideIndex];
+        if (nextSlide) {
+          const nextSlideImage = nextSlide.querySelector('img');
+          if (nextSlideImage) {
+            const nextImageSrc = nextSlideImage.getAttribute('src');
+            const previewImage = document.querySelector('.next-slide-preview');
+            previewImage.src = nextImageSrc;
+          }
+        }
+      }
+
+      function startProgress() {
+        const progress = document.querySelector('.thumbnail-progress-1');
+        if (progress) {
+          progress.style.animation = 'none';
+          progress.offsetHeight; // Force reflow
+          progress.style.animation = 'progress-top 5s linear';
+        }
+        const progress2 = document.querySelector('.thumbnail-progress-2');
+        if (progress2) {
+          progress2.style.animation = 'none';
+          progress2.offsetHeight; // Force reflow
+          progress2.style.animation = 'progress-bottom 5s linear';
+        }
+      }
+
+      function updateSlideNumber(swiper) {
+        const currentSlide = document.querySelector('.current-slide');
+        currentSlide.textContent = String(swiper.realIndex + 1).padStart(
+          2,
+          '0'
+        );
+      }
+
+      // Reset progress animation when user manually changes slide
+      heroSlider.on('slideChangeTransitionStart', () => {
+        startProgress();
+      });
+
+      // Product Slider
+      const productSlider = new Swiper('.product-slider', {
+        grabCursor: true,
+        slidesPerView: 'auto',
+        centeredSlides: true,
+        spaceBetween: 200,
+        initialSlide: 1,
+        effect: 'coverflow',
+        coverflowEffect: {
+          rotate: 15,
+          stretch: 0,
+          depth: 100,
+          modifier: 2,
+          slideShadows: false,
+        },
+        breakpoints: {
+          320: {
+            slidesPerView: 1.5,
+            spaceBetween: 20,
+          },
+          // Tablet
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 40,
+          },
+          768: {
+            slidesPerView: 2.5,
+          },
+        },
+        on: {
+          init: function () {
+            updateSlideRotation(this);
+          },
+          slideChange: function () {
+            updateSlideRotation(this);
+            updateClientInfo(this);
+          },
+          setTransition: function (speed) {
+            updateSlideRotation(this);
+          },
+        },
+      });
+
+      function updateSlideRotation(swiper) {
+        const slides = swiper.slides;
+
+        slides.forEach((slide, index) => {
+          const slideEl = slide.querySelector('div');
+          if (!slideEl) return;
+
+          if (index === swiper.activeIndex) {
+            // Center slide - no rotation
+            slideEl.style.transform = 'rotate(0deg)';
+          } else if (index < swiper.activeIndex) {
+            // Slides before active - rotate left
+            slideEl.style.transform = 'rotate(-12deg)';
+          } else {
+            // Slides after active - rotate right
+            slideEl.style.transform = 'rotate(12deg)';
+          }
+
+          // Add transition
+          slideEl.style.transition = 'transform 0.5s ease';
+        });
+      }
+
+      // Quality Products Animation
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setTimeout(() => {
+                document
+                  .querySelector('.quality-title')
+                  .classList.add('visible');
+              }, 200);
+              setTimeout(() => {
+                document
+                  .querySelector('.quality-text')
+                  .classList.add('visible');
+              }, 500);
+            }
+          });
+        },
+        { threshold: 0.5 }
+      );
+
+      observer.observe(document.getElementById('quality-section'));
+
+      // Client Info Update
+      function updateClientInfo(swiper) {
+        const clients = [
+          { name: 'Client 1', location: 'Dubai, United Arab Emirates' },
+          { name: 'Client 2', location: 'Singapore' },
+          { name: 'Client 3', location: 'Tokyo, Japan' },
+        ];
+
+        document.querySelector('.client-name').textContent =
+          clients[swiper.realIndex].name;
+        document.querySelector('.client-location').textContent =
+          clients[swiper.realIndex].location;
+      }
+
+      // Mobile Menu Toggle
+      // Mobile Menu Toggle
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const closeMenuButton = document.getElementById('close-menu-button'); // Add this line
+      const mobileMenu = document.getElementById('mobile-menu');
+      let isMenuOpen = false;
+
+      function toggleMenu(shouldOpen) {
+        isMenuOpen = shouldOpen;
+        const menuButton = document.getElementById('mobile-menu-button');
+        menuButton.setAttribute('aria-expanded', shouldOpen);
+
+        if (shouldOpen) {
+          mobileMenu.classList.remove('-translate-y-full');
+          mobileMenu.classList.add('translate-y-0');
+          // Trap focus within menu when open
+          trapFocus(mobileMenu);
+        } else {
+          mobileMenu.classList.remove('translate-y-0');
+          mobileMenu.classList.add('-translate-y-full');
+          // Return focus to menu button when closing
+          menuButton.focus();
+        }
+      }
+
+      // Add click event for menu open
+      mobileMenuButton.addEventListener('click', () => toggleMenu(true));
+
+      // Add click event for menu close
+      closeMenuButton.addEventListener('click', () => toggleMenu(false));
+
+      // Close mobile menu when clicking outside
+      document.addEventListener('click', (event) => {
+        if (
+          isMenuOpen &&
+          !mobileMenu.contains(event.target) &&
+          !mobileMenuButton.contains(event.target)
+        ) {
+          toggleMenu(false);
+        }
+      });
+
+      // Optional: Add escape key functionality to close menu
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && isMenuOpen) {
+          toggleMenu(false);
+        }
+      });
+
+      // Add click handler for next slide button
+      document
+        .getElementById('next-slide-button')
+        .addEventListener('click', () => {
+          heroSlider.slideNext();
+        });
+
+      // Add keyboard support for next slide button
+      document
+        .getElementById('next-slide-button')
+        .addEventListener('keydown', (event) => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            heroSlider.slideNext();
+          }
+        });
+
+      // Add focus trap for accessibility
+      function trapFocus(element) {
+        const focusableElements = element.querySelectorAll(
+          'a[href], button, textarea, input[type="text"], input[type="radio"], input[type="checkbox"], select'
+        );
+        const firstFocusableElement = focusableElements[0];
+        const lastFocusableElement =
+          focusableElements[focusableElements.length - 1];
+
+        element.addEventListener('keydown', function (e) {
+          const isTabPressed = e.key === 'Tab';
+
+          if (!isTabPressed) return;
+
+          if (e.shiftKey) {
+            if (document.activeElement === firstFocusableElement) {
+              lastFocusableElement.focus();
+              e.preventDefault();
+            }
+          } else {
+            if (document.activeElement === lastFocusableElement) {
+              firstFocusableElement.focus();
+              e.preventDefault();
+            }
+          }
+        });
+
+        firstFocusableElement.focus();
+      }
+    </script>
+  </body>
+</html>
