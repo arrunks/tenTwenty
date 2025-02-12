@@ -8,8 +8,8 @@
     "build:css": "tailwindcss -i ./styles.css -o ./dist/output.css",
     "serve": "live-server dist --port=3000 --no-browser",
     "clean": "rimraf dist",
-    "copy": "copyfiles -u 2 \"public/images/**/*\" dist && copyfiles index.html dist",
-    "mkdir": "mkdirp dist",
+    "copy": "copyfiles -u 1 \"public/images/**/*\" dist/images && copyfiles index.html dist",
+    "mkdir": "mkdirp dist/images",
     "dev": "npm run mkdir && npm run copy && concurrently \"npm run watch:css\" \"npm run serve\"",
     "build": "npm run clean && npm run mkdir && npm run build:css && npm run copy"
   },
