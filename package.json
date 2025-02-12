@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "watch:css": "tailwindcss -i ./styles.css -o ./output.css --watch",
-    "build:css": "tailwindcss -i ./styles.css -o ./output.css",
-    "serve": "live-server --port=3000 --no-browser",
-    "dev": "concurrently \"npm run watch:css\" \"npm run serve\"",
-    "build": "npm run build:css && cp index.html output.css public/* ."
-  },
+    "scripts": {
+      "watch:css": "tailwindcss -i ./styles.css -o ./output.css --watch",
+      "build:css": "tailwindcss -i ./styles.css -o ./output.css",
+      "serve": "live-server --port=3000 --no-browser",
+      "dev": "concurrently \"npm run watch:css\" \"npm run serve\"",
+      "build": "npm run build:css && mkdir -p dist && cp index.html output.css dist/ && cp -r public/* dist/"
+    },
+  
   "keywords": [],
   "author": "",
   "license": "ISC",
